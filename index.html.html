@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Friends Website</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+#loginBox {
+    text-align: center;
+    margin-top: 120px;
+}
+
+input {
+    padding: 12px;
+    width: 260px;
+    margin: 8px;
+    border-radius: 6px;
+    border: none;
+}
+
+button {
+    padding: 12px 30px;
+    background: #00bcd4;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#error {
+    color: red;
+}
+
+#content {
+    display: none;
+    padding: 20px;
+}
+
+/* Tabs styling */
+.tab {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tab button {
+    background-color: #222;
+    border: 1px solid #444;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 6px;
+}
+
+.tab button.active {
+    background-color: #00bcd4;
+    color: black;
+}
+
+.phase {
+    display: none;
+}
+
+.friend {
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.gallery img, .gallery video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    h1 { font-size: 22px; }
+    .tab button { padding: 8px 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="loginBox">
+    <h2>🔒 Private Friends Access</h2>
+    <input type="password" id="password" placeholder="Enter Password"><br>
+    <button onclick="login()">Login</button>
+    <p id="error"></p>
+</div>
+
+<!-- CONTENT -->
+<div id="content">
+    <h1>❤️ Our Friendship ❤️</h1>
+
+    <!-- Tabs -->
+    <div class="tab">
+        <button class="tablinks active" onclick="openPhase(event, 'phase1')">Frinds info</button>
+        <button class="tablinks" onclick="openPhase(event, 'phase2')">Celebration Pictures</button>
+        <button class="tablinks" onclick="openPhase(event, 'phase3')">Celebration Videos</button>
+    </div>
+
+    <!-- Phase 1: Info + common picture -->
+    <div id="phase1" class="phase" style="display:block;">
+        <div class="friend">
+            <h2>Name:Rizwan Hasham Mehar</h2>
+            <p><b>Date of Birth:</b> 16 feb 2008</p>
+            <img src="IMG-20250503-WA0021.jpg" style="width:300px; border-radius:10px;">
+        </div>
+        <div class="friend">
+            <h2>Name: Husnain Ahmad Mughal</h2>
+            <p><b>Date of Birth:</b> 20 feb 2008</p>
+            <img src="IMG-20250807-WA0029.jpg" style="width:300px; border-radius:10px;">
+        </div>
+        <div class="friend">
+            <h2>Name: Muneeb Ashfaq Mughal</h2>
+            <p><b>Date of Birth:</b> 28 feb 2009</p>
+            <img src="IMG-20250814-WA0144.jpg" style="width:300px; border-radius:10px;">
+        </div>
+        <div class="friend">
+            <h2>Name: Rana Hammad Ahmad</h2>
+            <p><b>Date of Birth:</b> 7/10 aughust 2008</p>
+            <img src="WhatsApp Image 2025-11-20 at 6.19.12 AM.jpeg" style="width:300px; border-radius:10px;">
+        </div>
+        <div class="friend">
+            <h2>Name: Subhan Mehar</h2>
+            <p><b>Date of Birth:</b> 20 December 2008</p>
+            <img src="IMG-20250815-WA0014.jpg" style="width:300px; border-radius:10px;">
+        </div>
+    </div>
+
+    <!-- Phase 2: Celebration Pictures -->
+    <div id="phase2" class="phase">
+        <div class="friend">
+            
+        
+                <img src="IMG-20250814-WA0014.jpg"style="width:300px; border-radius:10px;">
+                <img src="IMG-20250814-WA0019.jpg"style="width:300px; border-radius:10px;">
+                <img src="IMG-20250814-WA0025.jpg"style="width:300px; border-radius:10px;">
+                <img src="IMG-20250814-WA0023.jpg"style="width:300px; border-radius:10px;">
+        
+        </div>
+        <div class="friend">
+            
+                <img src="IMG-20250814-WA0071.jpg"style="width:300px; border-radius:10px;">
+                <img src="IMG-20250814-WA0016.jpg"style="width:300px; border-radius:10px;">
+                <img src="IMG-20250814-WA0039.jpg"style="width:300px; border-radius:10px;">
+                <img src="IMG-20250814-WA0228.jpg"style="width:300px; border-radius:10px;">
+        </div>
+        <div class="friend">
+            
+        <img src="IMG-20250814-WA0045.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+        <img src="IMG-20250814-WA0215.jpg"style="width:300px; border-radius:10px;">
+        <img src="IMG-20250815-WA0011.jpg"style="width:300px; border-radius:10px;">
+        <img src="IMG-20250814-WA0144.jpg"style=" height: 535px; width:400px; border-radius:10px;">
+            
+        </div>
+        <div class="friend">
+            
+            <img src="IMG-20250814-WA0133.jpg"style=" height: 535px; width:500px; border-radius:10px;">
+            <img src="IMG-20250814-WA0216.jpg"style="width:300px; border-radius:10px;">
+            <img src="IMG-20250814-WA0085.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+            <img src="IMG-20250814-WA0042.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+        </div>
+        <div class="friend">
+           
+             <img src="IMG-20250814-WA0150.jpg"style=" height: 535px; width:500px; border-radius:10px;">
+             <img src="IMG-20250814-WA0226.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+             <img src="IMG-20250815-WA0019.jpg"style="width:300px; border-radius:10px;">
+             <img src="IMG-20250814-WA0149.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+            
+        </div>
+        <div class="friend">
+            <img src="IMG-20250814-WA0056.jpg"style="width:300px; border-radius:10px;">
+            <img src="IMG-20250814-WA0060.jpg"style="width:300px; border-radius:10px;">
+            <img src="IMG-20250814-WA0030.jpg"style="width:300px; border-radius:10px;">
+            <img src="IMG-20250814-WA0079.jpg"style="width:300px; border-radius:10px;">
+
+
+        </div>
+        <div class="friend">
+            <img src="IMG-20250815-WA0014.jpg"style="width:300px; border-radius:10px;">
+            <img src="IMG-20250815-WA0013.jpg"style="width:300px; border-radius:10px;">
+            <img src="IMG-20250815-WA0017.jpg"style="width:300px; border-radius:10px;">
+            <img src="IMG-20250815-WA0018.jpg"style="width:300px; border-radius:10px;">
+        </div>
+        <div class="friend">
+            <img src="IMG-20250814-WA0028.jpg"style="width:300px; border-radius:10px;">
+            <img src="IMG-20250814-WA0148.jpg"style="width:300px; border-radius:10px;">
+            <img src="IMG-20250814-WA0106.jpg"style="width:300px; border-radius:10px;">
+            <img src="IMG-20250814-WA0103.jpg"style="width:300px; border-radius:10px;">
+        </div>
+        <div class="friend">
+            <img src="IMG-20250814-WA0093.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+            <img src="IMG-20250814-WA0090.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+            <img src="IMG-20250815-WA0022.jpg"style="width:300px; border-radius:10px;">
+            <img src="IMG-20250814-WA0099.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+        </div>
+        <div class="friend">
+            <img src="IMG-20250814-WA0112.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+            <img src="IMG-20250814-WA0147.jpg"style=" height: 535px; width:550px; border-radius:10px;">
+            <img src="IMG-20250814-WA0053.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+            <img src="IMG-20250814-WA0064.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+        </div>
+        <div class="friend">
+            <img src="IMG-20250814-WA0142.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+            <img src="IMG-20250814-WA0068.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+            <img src="IMG-20250814-WA0097.jpg"style=" height: 535px; width:350px; border-radius:10px;">
+            <img src="IMG-20250815-WA0020.jpg"style="width:300px; border-radius:10px;">
+        </div>
+    </div>
+
+    <!-- Phase 3: Celebration Videos -->
+    <div id="phase3" class="phase">
+        <div class="friend">
+            <h2>special video </h2>
+            <video controls src="My Video.mov" style=" height: 600px; width:700px; border-radius:10px;"></video>
+             <video controls src="My Video2.mp4" style=" height: 600px; width:700px; border-radius:10px;"></video></video>
+        </div>
+        <div class="friend">
+            <video controls src="VID-20250814-WA0127.mp4" style=" height: 500px; width:500px; border-radius:10px;"></video>
+            <video controls src="VID-20250814-WA0165.mp4" style=" height: 500px; width:500px; border-radius:10px;"></video>
+            <video controls src="VID-20250814-WA0172.mp4" style=" height: 500px; width:500px; border-radius:10px;"></video>
+        <div class="friend">
+            
+            <video controls src="VID-20250814-WA0173.mp4" style=" height: 500px; width:500px; border-radius:10px;"></video>
+            <video controls src="VID-20250814-WA0185.mp4" style=" height: 500px; width:500px; border-radius:10px;"></video>
+            <video controls src="VID-20250814-WA0203.mp4" style=" height: 500px; width:500px; border-radius:10px;"></video>
+        </div>
+        <div class="friend">
+         <video controls src="VID-20250814-WA0204.mp4" style=" height: 500px; width:500px; border-radius:10px;"></video>
+         <video controls src="VID-20250814-WA0207.mp4" style=" height: 500px; width:500px; border-radius:10px;"></video>
+        </div>
+        <div class="friend">
+            <video controls src="VID-20250814-WA0210.mp4" style=" height: 500px; width:500px; border-radius:10px;"></video>
+        
+        </div>
+    </div>
+
+</div>
+
+<script>
+// Single password
+const PASSWORD = "friendforever";
+
+function login() {
+    const pass = document.getElementById("password").value;
+
+    if(pass === PASSWORD) {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    } else {
+        document.getElementById("error").innerText = "Wrong password";
+    }
+}
+
+// Tab switching
+function openPhase(evt, phaseName) {
+    const phases = document.getElementsByClassName("phase");
+    for(let i=0;i<phases.length;i++){
+        phases[i].style.display = "none";
+    }
+    const tabs = document.getElementsByClassName("tablinks");
+    for(let i=0;i<tabs.length;i++){
+        tabs[i].className = tabs[i].className.replace(" active","");
+    }
+    document.getElementById(phaseName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+</body>
+</html>
